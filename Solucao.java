@@ -23,6 +23,8 @@ public class Solucao{
         this.ante = new Integer[grafo.size()];
         this.cor = new int[grafo.size()];
         this.d = new int[grafo.size()];
+        int [] busca = new int[grafo.size()];
+        int cont = 0;
 
         for(int i  = 0; i < grafo.size(); i++){
             this.ante[i] = null;
@@ -36,6 +38,7 @@ public class Solucao{
 
         while(!fila.isEmpty()){
             int u = fila.poll();
+            busca[cont] = u;
 
             LinkedList<Integer> adj = grafo.get(u);
 
@@ -48,7 +51,13 @@ public class Solucao{
                 }
             }
 
+            cont++;
+
             cor[u] = PRETO;
+        }
+
+        for(int i = 0; i < grafo.size(); i++){
+            System.out.println(busca[i]);
         }
 
     }
