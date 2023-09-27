@@ -58,6 +58,9 @@ public class Solucao{
 
         for(int i = 0; i < grafo.size(); i++){
             System.out.println(busca[i]);
+            if(i < grafo.size() - 1){
+                System.out.println("-");
+            }
         }
 
     }
